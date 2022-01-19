@@ -1,0 +1,33 @@
+#loadingMessage {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: red;
+  font-size: 25px;
+}
+
+h1 {
+  text-transform: uppercase;
+  text-align: center;
+  font-family: sans-serif;
+}
+h2 {
+  text-align: center;
+}
+
+ul li {
+  list-style: none;
+  justify-content: space-between;
+}
+
+ul li span {
+  width: 100px;
+  display: inline-block;
+}
+
+.cform li {
+  display: inline;
+  padding: 10px;
+  background: #ccc;
+}
