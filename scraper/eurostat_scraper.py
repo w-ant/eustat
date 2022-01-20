@@ -100,13 +100,13 @@ def add_to_database(file_path):
 if __name__ == "__main__":
     links = get_links(url)
     save_links_as_csv(links)
-    for link in links[12:]:
+    for link in links:
         file_path = download_file(link)
         csv_file = extract(file_path)
         add_to_database(csv_file)
         os.remove(file_path)
         os.remove(csv_file)
     df = pd.read_csv("countries.csv")
-    df.to_sql("countries", conn)
+    df.to_sql("countries", conn, if_exists="replace")
     conn.close()
-    shutil.copyfile(database, os.path.join("../api"))
+    shutil.copyfile(database, "../api/eurostat.db")
